@@ -1,0 +1,29 @@
+{
+  "name": "react-medium-editor",
+  "version": "1.0.0",
+  "description": "React wrapper for medium-editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangzuo/react-medium-editor.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "medium",
+    "editor"
+  ],
+  "author": "Wang Zuo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangzuo/react-medium-editor/issues"
+  },
+  "homepage": "https://github.com/wangzuo/react-medium-editor",
+  "dependencies": {
+    "medium-editor": "^4.10.1",
+    "react": "^0.13.3"
+  }
+}

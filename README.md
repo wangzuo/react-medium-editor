@@ -1,2 +1,2 @@
-# -react-medium-editor
+# react-medium-editor
 React wrapper for medium-editor
