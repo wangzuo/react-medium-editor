@@ -8,4 +8,7 @@ var handleChange = function(text) {
   console.log(text);
 };
 
-React.render(<Editor text={text} onChange={handleChange}/>, document.body);
+React.render(
+  <Editor text={text}
+    onChange={handleChange}
+    options={{buttons: ['bold', 'italic', 'underline']}}/>, document.body);
