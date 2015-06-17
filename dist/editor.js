@@ -12,6 +12,12 @@ module.exports = React.createClass({
     };
   },
 
+  getDefaultProps: function getDefaultProps() {
+    return {
+      tag: 'div'
+    };
+  },
+
   componentDidMount: function componentDidMount() {
     var _this = this;
 
@@ -31,11 +37,16 @@ module.exports = React.createClass({
     if (nextProps.text !== this.state.text && !this._updated) {
       this.setState({ text: nextProps.text });
     }
+
+    if (this._updated) this._updated = false;
   },
 
   render: function render() {
-    return React.createElement('div', { className: this.props.className, contentEditable: 'true',
-      dangerouslySetInnerHTML: { __html: this.state.text } });
+    return React.createElement(this.props.tag, {
+      className: this.props.className,
+      contentEditable: true,
+      dangerouslySetInnerHTML: { __html: this.state.text }
+    });
   },
 
   change: function change(text) {
