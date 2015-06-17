@@ -13,6 +13,7 @@ var App = React.createClass({
       <div>
         <div>{this.state.text}</div>
         <Editor
+          tag="h1"
           text={this.state.text}
           onChange={this.handleChange}
           options={{buttons: ['bold', 'italic', 'underline']}}
