@@ -4,6 +4,7 @@
   "description": "React wrapper for medium-editor",
   "main": "index.js",
   "scripts": {
+  	"start": "webpack-dev-server -c --port=8899",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

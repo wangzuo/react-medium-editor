@@ -1,5 +1,7 @@
 require('medium-editor/dist/css/medium-editor.css');
 require('medium-editor/dist/css/themes/default.css');
+require('./app.css');
+
 var React = require('react');
 var Editor = require('../lib/editor');
 
@@ -10,14 +12,19 @@ var App = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="app">
+        <h1>react-medium-editor</h1>
+        <h3>Html content</h3>
         <div>{this.state.text}</div>
+
+        <h3>Editor #1 (&lt;pre&gt; tag)</h3>
         <Editor
-          tag="h1"
+          tag="pre"
           text={this.state.text}
           onChange={this.handleChange}
           options={{buttons: ['bold', 'italic', 'underline']}}
         />
+        <h3>Editor #2</h3>
         <Editor
           text={this.state.text}
           onChange={this.handleChange}
@@ -31,4 +38,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.body);
+React.render(<App/>, document.getElementById('app'));

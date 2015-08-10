@@ -4,7 +4,7 @@ var React = require('react');
 var MediumEditor = require('medium-editor');
 
 module.exports = React.createClass({
-  displayName: 'exports',
+  displayName: 'MediumEditor',
 
   getInitialState: function getInitialState() {
     return {
