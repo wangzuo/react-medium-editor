@@ -23,9 +23,11 @@
     "url": "https://github.com/wangzuo/react-medium-editor/issues"
   },
   "homepage": "https://github.com/wangzuo/react-medium-editor",
-  "dependencies": {
-    "medium-editor": "^4.10.1",
+  "peerDependencies": {
     "react": "^0.13.3"
+  },
+  "dependencies": {
+    "medium-editor": "^4.10.1"
   },
   "devDependencies": {
     "babel-core": "^5.4.5",

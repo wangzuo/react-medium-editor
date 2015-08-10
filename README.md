@@ -1,5 +1,7 @@
 # react-medium-editor
 React wrapper for [medium-editor](https://github.com/daviferreira/medium-editor)
+### Demo
+[http://wangzuo.github.io/react-medium-editor/example/](http://wangzuo.github.io/react-medium-editor/example/)
 ### Installation
 ``` sh
 npm install react-medium-editor --save
@@ -8,7 +10,9 @@ npm install react-medium-editor --save
 ``` javascript
 var App = React.createClass({
   getInitialState() {
-    return {text: 'Fusce dapibus, tellus ac cursus commodo'}
+    return {
+      text: 'Fusce dapibus, tellus ac cursus commodo'
+    };
   },
 
   render() {
@@ -34,3 +38,5 @@ var App = React.createClass({
   }
 });
 ```
+### License
+MIT
