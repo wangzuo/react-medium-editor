@@ -8,6 +8,10 @@ npm install react-medium-editor --save
 ```
 ### Usage
 ``` javascript
+// load theme styles with webpack
+require('medium-editor/dist/css/medium-editor.css');
+require('medium-editor/dist/css/themes/default.css');
+
 var App = React.createClass({
   getInitialState() {
     return {
