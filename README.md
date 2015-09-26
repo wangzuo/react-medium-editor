@@ -14,21 +14,24 @@ require('medium-editor/dist/css/themes/default.css');
 
 var App = React.createClass({
   getInitialState() {
-    return {
-      text: 'Fusce dapibus, tellus ac cursus commodo'
-    };
+    return {text: 'Fusce dapibus, tellus ac cursus commodo'}
   },
 
   render() {
     return (
-      <div>
+      <div className="app">
+        <h1>react-medium-editor</h1>
+        <h3>Html content</h3>
         <div>{this.state.text}</div>
+
+        <h3>Editor #1 (&lt;pre&gt; tag)</h3>
         <Editor
-          tag="h1"
+          tag="pre"
           text={this.state.text}
           onChange={this.handleChange}
-          options={{buttons: ['bold', 'italic', 'underline']}}
+          options={{toolbar: {buttons: ['bold', 'italic', 'underline']}}}
         />
+        <h3>Editor #2</h3>
         <Editor
           text={this.state.text}
           onChange={this.handleChange}
