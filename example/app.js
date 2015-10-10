@@ -3,6 +3,7 @@ require('medium-editor/dist/css/themes/default.css');
 require('./app.css');
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Editor = require('../lib/editor');
 
 var App = React.createClass({
@@ -38,4 +39,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));

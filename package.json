@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/wangzuo/react-medium-editor",
   "peerDependencies": {
-    "react": "^0.13.3 || ^0.14.0-rc1"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "dependencies": {
     "medium-editor": "^5.8.2"
