@@ -22,7 +22,7 @@ var App = React.createClass({
           tag="pre"
           text={this.state.text}
           onChange={this.handleChange}
-          options={{buttons: ['bold', 'italic', 'underline']}}
+          options={{toolbar: {buttons: ['bold', 'italic', 'underline']}}}
         />
         <h3>Editor #2</h3>
         <Editor
