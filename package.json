@@ -4,7 +4,7 @@
   "description": "React wrapper for medium-editor",
   "main": "index.js",
   "scripts": {
-  	"start": "webpack-dev-server -c --port=8899",
+    "start": "webpack-dev-server -c --port=8899",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/wangzuo/react-medium-editor",
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "dependencies": {
     "medium-editor": "^5.8.2"
