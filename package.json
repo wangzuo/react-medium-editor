@@ -1,6 +1,6 @@
 {
   "name": "react-medium-editor",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "React wrapper for medium-editor",
   "main": "index.js",
   "scripts": {
