@@ -12,13 +12,11 @@ module.exports = React.createClass({
       text: this.props.text
     };
   },
-
   getDefaultProps: function getDefaultProps() {
     return {
       tag: 'div'
     };
   },
-
   componentDidMount: function componentDidMount() {
     var _this = this;
 
@@ -29,11 +27,9 @@ module.exports = React.createClass({
       _this.change(dom.innerHTML);
     });
   },
-
   componentWillUnmount: function componentWillUnmount() {
     this.medium.destroy();
   },
-
   componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
     if (nextProps.text !== this.state.text && !this._updated) {
       this.setState({ text: nextProps.text });
@@ -41,7 +37,6 @@ module.exports = React.createClass({
 
     if (this._updated) this._updated = false;
   },
-
   render: function render() {
     return React.createElement(this.props.tag, {
       className: this.props.className,
@@ -49,7 +44,6 @@ module.exports = React.createClass({
       dangerouslySetInnerHTML: { __html: this.state.text }
     });
   },
-
   change: function change(text) {
     if (this.props.onChange) this.props.onChange(text);
   }
