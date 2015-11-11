@@ -21,6 +21,9 @@ var App = React.createClass({
         <h3>Editor #1 (&lt;pre&gt; tag)</h3>
         <Editor
           tag="pre"
+          className="editor"
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
           text={this.state.text}
           onChange={this.handleChange}
           options={{toolbar: {buttons: ['bold', 'italic', 'underline']}}}
@@ -34,8 +37,18 @@ var App = React.createClass({
     );
   },
 
+  handleFocus() {
+    console.log('onFocus');
+  },
+
+  handleBlur() {
+    console.log('onBlur');
+  },
+
   handleChange(text) {
-    this.setState({text: text});
+    this.setState({
+      text: text
+    });
   }
 });
 
