@@ -51,6 +51,6 @@ module.exports = React.createClass({
     return React.createElement(tag, props);
   },
   change: function change(text) {
-    if (this.props.onChange) this.props.onChange(text);
+    if (this.props.onChange) this.props.onChange(text, this.medium);
   }
 });
