@@ -1,5 +1,7 @@
 'use strict';
 
+var assign = require('object-assign');
+var blacklist = require('blacklist');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var MediumEditor = require('medium-editor');
@@ -38,11 +40,15 @@ module.exports = React.createClass({
     if (this._updated) this._updated = false;
   },
   render: function render() {
-    return React.createElement(this.props.tag, {
-      className: this.props.className,
+    var tag = this.props.tag;
+    var props = blacklist(this.props, 'tag', 'contentEditable', 'dangerouslySetInnerHTML');
+
+    assign(props, {
       contentEditable: true,
       dangerouslySetInnerHTML: { __html: this.state.text }
     });
+
+    return React.createElement(tag, props);
   },
   change: function change(text) {
     if (this.props.onChange) this.props.onChange(text);
