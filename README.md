@@ -1,7 +1,7 @@
 # react-medium-editor
 React wrapper for [medium-editor](https://github.com/daviferreira/medium-editor)
 ### Demo
-[http://wangzuo.github.io/react-medium-editor/example/](http://wangzuo.github.io/react-medium-editor/example/)
+[http://wangzuo.github.io/react-medium-editor](http://wangzuo.github.io/react-medium-editor)
 ### Installation
 ``` sh
 npm install react-medium-editor --save
