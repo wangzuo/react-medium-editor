@@ -33,7 +33,9 @@
     "react-dom": "^0.14.0"
   },
   "dependencies": {
-    "medium-editor": "^5.10.0"
+    "blacklist": "^1.1.2",
+    "medium-editor": "^5.10.0",
+    "object-assign": "^4.0.1"
   },
   "devDependencies": {
     "babel-loader": "^6.1.0",
