@@ -40,7 +40,7 @@ var App = React.createClass({
     );
   },
 
-  handleChange(text) {
+  handleChange(text, medium) {
     this.setState({text: text});
   }
 });
