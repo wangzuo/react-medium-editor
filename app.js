@@ -45,10 +45,12 @@ var App = React.createClass({
     console.log('onBlur');
   },
 
-  handleChange(text) {
+  handleChange(text, medium) {
     this.setState({
       text: text
     });
+
+    console.log('medium', medium);
   }
 });
 
