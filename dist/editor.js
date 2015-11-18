@@ -25,7 +25,6 @@ module.exports = React.createClass({
     var dom = ReactDOM.findDOMNode(this);
     this.medium = new MediumEditor(dom, this.props.options);
     this.medium.subscribe('editableInput', function (e) {
-      _this._updated = true;
       _this.change(dom.innerHTML);
     });
   },
@@ -33,11 +32,10 @@ module.exports = React.createClass({
     this.medium.destroy();
   },
   componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-    if (nextProps.text !== this.state.text && !this._updated) {
+    var dom = ReactDOM.findDOMNode(this);
+    if (nextProps.text !== dom.innerHTML) {
       this.setState({ text: nextProps.text });
     }
-
-    if (this._updated) this._updated = false;
   },
   render: function render() {
     var tag = this.props.tag;
