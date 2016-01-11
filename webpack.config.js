@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     'dist/editor': './lib/index',
     'example/bundle': './example/index.js',
+    'example/styles-bundle': './example/styles.js'
   },
   output: {
     path: __dirname,

@@ -1,7 +1,4 @@
-require('medium-editor/dist/css/medium-editor.css');
-require('medium-editor/dist/css/themes/default.css');
-require('./app.css');
-
+var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactDOMServer = require('react-dom/server');
 var App = require('./app');
@@ -16,13 +13,13 @@ module.exports = function(locals, cb) {
   cb(null, `<html>
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <script src="/example/styles-bundle.js"></script>
     <title>react-medium-editor</title>
   </head>
   <body>
     <div id="app">${html}</div>
-    <script src="https://fb.me/react-0.14.0.js"></script>
-    <script src="https://fb.me/react-dom-0.14.0.js"></script>
-    <script src="http://localhost:8899/example/bundle.js"></script>
+    <script src="/example/bundle.js"></script>
   </body>
 </html>`);
 };
