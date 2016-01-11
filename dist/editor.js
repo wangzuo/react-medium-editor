@@ -4,7 +4,10 @@ var assign = require('object-assign');
 var blacklist = require('blacklist');
 var React = require('react');
 var ReactDOM = require('react-dom');
-var MediumEditor = require('medium-editor');
+
+if (typeof document !== 'undefined') {
+  var MediumEditor = require('medium-editor');
+}
 
 module.exports = React.createClass({
   displayName: 'MediumEditor',
@@ -23,6 +26,7 @@ module.exports = React.createClass({
     var _this = this;
 
     var dom = ReactDOM.findDOMNode(this);
+
     this.medium = new MediumEditor(dom, this.props.options);
     this.medium.subscribe('editableInput', function (e) {
       _this._updated = true;
