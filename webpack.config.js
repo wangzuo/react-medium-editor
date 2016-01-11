@@ -2,8 +2,8 @@ var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 module.exports = {
   entry: {
-    'example/bundle': './example/index.js',
-    'example/styles-bundle': './example/styles.js'
+    'bundle': './example/index.js',
+    'styles': './example/styles.js'
   },
   output: {
     filename: '[name].js',
@@ -17,6 +17,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new StaticSiteGeneratorPlugin('example/bundle', ['/'])
+    new StaticSiteGeneratorPlugin('bundle', ['/'])
   ]
 };
