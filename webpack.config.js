@@ -1,3 +1,5 @@
+var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+
 module.exports = {
   entry: {
     'dist/editor': './lib/index',
@@ -5,7 +7,8 @@ module.exports = {
   },
   output: {
     path: __dirname,
-    filename: '[name].js'
+    filename: '[name].js',
+    libraryTarget: 'umd'
   },
   module: {
     loaders: [
@@ -13,9 +16,7 @@ module.exports = {
       { test: /\.css$/, loader: "style-loader!css-loader" }
     ]
   },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM'
-  },
-  devtool: "source-map"
+  plugins: [
+    new StaticSiteGeneratorPlugin('example/bundle', ['/'])
+  ]
 };
