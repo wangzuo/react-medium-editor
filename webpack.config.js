@@ -1,14 +1,16 @@
 module.exports = {
-  entry: './example/index.js',
+  entry: {
+    'dist/editor': './lib/index',
+    'example/bundle': './example/index.js',
+  },
   output: {
-    path: __dirname + '/example',
-    filename: 'bundle.js',
-    publicPath: "/example/",
+    path: __dirname,
+    filename: '[name].js'
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-      {test: /\.css$/, loader: "style-loader!css-loader"}
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.css$/, loader: "style-loader!css-loader" }
     ]
   },
   externals: {
