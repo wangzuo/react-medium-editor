@@ -1,14 +1,14 @@
-require('medium-editor/dist/css/medium-editor.css');
-require('medium-editor/dist/css/themes/default.css');
-require('./app.css');
-
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Editor = require('../lib/editor');
 
-var App = React.createClass({
+module.exports = React.createClass({
+  displayName: 'App',
+
   getInitialState() {
-    return {text: 'Fusce dapibus, tellus ac cursus commodo'}
+    return { 
+      text: 'Fusce dapibus, tellus ac cursus commodo'
+    };
   },
 
   render() {
@@ -53,5 +53,3 @@ var App = React.createClass({
     console.log('medium', medium);
   }
 });
-
-ReactDOM.render(<App/>, document.getElementById('app'));
