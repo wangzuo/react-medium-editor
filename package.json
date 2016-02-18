@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -c --port=8899",
-    "build": "make",
+    "build": "babel lib --out-dir dist && webpack -p",
     "deploy": "npm run build && github-pages-deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -46,6 +46,7 @@
     "github-pages-deploy": "0.0.3",
     "static-site-generator-webpack-plugin": "^2.0.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.13"
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
   }
 }
