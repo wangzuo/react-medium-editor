@@ -33,15 +33,14 @@
     "react-dom": "^0.14.0"
   },
   "dependencies": {
-    "blacklist": "^1.1.2",
-    "medium-editor": "^5.10.0",
-    "object-assign": "^4.0.1"
+    "medium-editor": "^5.10.0"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-loader": "^6.1.0",
     "babel-preset-es2015": "^6.1.2",
     "babel-preset-react": "^6.1.2",
+    "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.22.0",
     "github-pages-deploy": "0.0.3",
     "static-site-generator-webpack-plugin": "^2.0.1",
