@@ -48,7 +48,6 @@ module.exports = React.createClass({
     var props = blacklist(this.props, 'tag', 'contentEditable', 'dangerouslySetInnerHTML');
 
     assign(props, {
-      contentEditable: true,
       dangerouslySetInnerHTML: { __html: this.state.text }
     });
 

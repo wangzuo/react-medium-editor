@@ -6,7 +6,7 @@ module.exports = React.createClass({
   displayName: 'App',
 
   getInitialState() {
-    return { 
+    return {
       text: 'Fusce dapibus, tellus ac cursus commodo'
     };
   },
@@ -28,10 +28,19 @@ module.exports = React.createClass({
           onChange={this.handleChange}
           options={{toolbar: {buttons: ['bold', 'italic', 'underline']}}}
         />
+
         <h3>Editor #2</h3>
         <Editor
           text={this.state.text}
           onChange={this.handleChange}
+        />
+
+        <h3>Editor #3 (editing disabled)</h3>
+        <p>Useful for using the toolbar with customized buttons/actions</p>
+        <Editor
+          style={{ outline: 'dotted 1px', padding: 10 }}
+          text={this.state.text}
+          options={{disableEditing: true, toolbar: false }}
         />
       </div>
     );
