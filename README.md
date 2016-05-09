@@ -1,5 +1,8 @@
 # react-medium-editor
 React wrapper for [medium-editor](https://github.com/daviferreira/medium-editor)
+
+For better rich text editing with react, check [draft-js](http://draftjs.org/).
+
 ### Demo
 [http://wangzuo.github.io/react-medium-editor](http://wangzuo.github.io/react-medium-editor)
 ### Installation
@@ -14,7 +17,7 @@ require('medium-editor/dist/css/themes/default.css');
 
 var App = React.createClass({
   getInitialState() {
-    return {text: 'Fusce dapibus, tellus ac cursus commodo'}
+    return { text: 'Fusce dapibus, tellus ac cursus commodo' };
   },
 
   render() {

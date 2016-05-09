@@ -6,7 +6,7 @@ module.exports = React.createClass({
   displayName: 'App',
 
   getInitialState() {
-    return { 
+    return {
       text: 'Fusce dapibus, tellus ac cursus commodo'
     };
   },
