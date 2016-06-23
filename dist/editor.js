@@ -57,3 +57,5 @@ module.exports = React.createClass({
     if (this.props.onChange) this.props.onChange(text, this.medium);
   }
 });
+
+module.exports.MediumEditor = MediumEditor;
