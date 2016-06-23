@@ -1,6 +1,6 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Editor = require('../lib/editor');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Editor from '../lib/editor';
 
 module.exports = React.createClass({
   displayName: 'App',
