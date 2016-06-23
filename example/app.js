@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Editor from '../lib/editor';
 
 module.exports = React.createClass({
