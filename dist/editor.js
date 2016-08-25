@@ -84,7 +84,7 @@ var ReactMediumEditor = function (_React$Component) {
     key: 'render',
     value: function render() {
       var tag = this.props.tag;
-      var props = (0, _blacklist2.default)(this.props, 'tag', 'contentEditable', 'dangerouslySetInnerHTML');
+      var props = (0, _blacklist2.default)(this.props, 'options', 'text', 'tag', 'contentEditable', 'dangerouslySetInnerHTML');
 
       (0, _objectAssign2.default)(props, {
         dangerouslySetInnerHTML: { __html: this.state.text }
