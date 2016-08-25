@@ -15,7 +15,11 @@ npm install react-medium-editor --save
 require('medium-editor/dist/css/medium-editor.css');
 require('medium-editor/dist/css/themes/default.css');
 
+// ES module
 import Editor from 'react-medium-editor';
+
+// CommonJS enviroment
+// var Editor = require('react-medium-editor').default;
 
 var App = React.createClass({
   getInitialState() {
