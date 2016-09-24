@@ -40,7 +40,7 @@ var ReactMediumEditor = function (_React$Component) {
   function ReactMediumEditor(props) {
     _classCallCheck(this, ReactMediumEditor);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ReactMediumEditor).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ReactMediumEditor.__proto__ || Object.getPrototypeOf(ReactMediumEditor)).call(this, props));
 
     _this.state = {
       text: _this.props.text
@@ -57,7 +57,6 @@ var ReactMediumEditor = function (_React$Component) {
 
       this.medium = new MediumEditor(dom, this.props.options);
       this.medium.subscribe('editableInput', function (e) {
-        _this2._updated = true;
         _this2.change(dom.innerHTML);
       });
     }
@@ -70,15 +69,20 @@ var ReactMediumEditor = function (_React$Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this.medium.destroy();
+      this._editorText = null;
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.text !== this.state.text && !this._updated) {
+      if (nextProps.text !== this._editorText) {
         this.setState({ text: nextProps.text });
       }
-
-      if (this._updated) this._updated = false;
+    }
+  }, {
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps, nextState) {
+      if (this._editorText === nextState.text) return false;
+      return true;
     }
   }, {
     key: 'render',
@@ -99,6 +103,8 @@ var ReactMediumEditor = function (_React$Component) {
   }, {
     key: 'change',
     value: function change(text) {
+      this._editorText = text;
+      this.setState({ text: text });
       if (this.props.onChange) this.props.onChange(text, this.medium);
     }
   }]);
