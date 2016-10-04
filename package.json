@@ -30,7 +30,7 @@
   "homepage": "https://github.com/wangzuo/react-medium-editor",
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0"
+    "react-dom": "^15.3.2"
   },
   "dependencies": {
     "blacklist": "^1.1.2",
