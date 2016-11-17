@@ -22,6 +22,18 @@ module.exports = React.createClass({
       tag: 'div'
     };
   },
+  setNoFollow: function setNoFollow(dom) {
+    var elems = dom.getElementsByTagName('*');
+    var i;
+    for (i in elems) {
+      if ((' ' + elems[i].className + ' ').indexOf(' no-follow ') > -1) {
+        elems[i].removeAttribute("class");
+        elems[i].setAttribute("rel","nofollow");
+      }
+    }
+
+    return dom;
+  },
   componentDidMount: function componentDidMount() {
     var _this = this;
 
@@ -30,6 +42,7 @@ module.exports = React.createClass({
     this.medium = new MediumEditor(dom, this.props.options);
     this.medium.subscribe('editableInput', function (e) {
       _this._updated = true;
+      dom = _this.setNoFollow(dom);
       _this.change(dom.innerHTML);
     });
   },
