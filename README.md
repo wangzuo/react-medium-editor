@@ -10,6 +10,17 @@ For better rich text editing with react, check [draft-js](http://draftjs.org/).
 npm install react-medium-editor --save
 ```
 ### Usage
+
+#### ES5
+``` javascript
+require('react-medium-editor');
+```
+
+#### ES6
+``` javascript
+import Editor from 'react-medium-editor';
+```
+
 ``` javascript
 // load theme styles with webpack
 require('medium-editor/dist/css/medium-editor.css');
