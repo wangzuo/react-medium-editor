@@ -40,11 +40,9 @@ var ReactMediumEditor = function (_React$Component) {
   function ReactMediumEditor(props) {
     _classCallCheck(this, ReactMediumEditor);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ReactMediumEditor).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ReactMediumEditor.__proto__ || Object.getPrototypeOf(ReactMediumEditor)).call(this, props));
 
-    _this.state = {
-      text: _this.props.text
-    };
+    _this.text = _this.props.text;
     return _this;
   }
 
@@ -58,13 +56,9 @@ var ReactMediumEditor = function (_React$Component) {
       this.medium = new MediumEditor(dom, this.props.options);
       this.medium.subscribe('editableInput', function (e) {
         _this2._updated = true;
+        _this2.text = dom.innerHTML;
         _this2.change(dom.innerHTML);
       });
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.medium.restoreSelection();
     }
   }, {
     key: 'componentWillUnmount',
@@ -72,13 +66,20 @@ var ReactMediumEditor = function (_React$Component) {
       this.medium.destroy();
     }
   }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.text !== this.state.text && !this._updated) {
-        this.setState({ text: nextProps.text });
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps) {
+      //inside update: received old text
+      if (this._updated && nextProps.text != this.text) return false;
+
+      //ignore same text
+      if (nextProps.text == this.text) {
+        this._updated = false;
+        return false;
       }
 
-      if (this._updated) this._updated = false;
+      //outside update
+      this.text = nextProps.text;
+      return true;
     }
   }, {
     key: 'render',
@@ -87,12 +88,8 @@ var ReactMediumEditor = function (_React$Component) {
       var props = (0, _blacklist2.default)(this.props, 'options', 'text', 'tag', 'contentEditable', 'dangerouslySetInnerHTML');
 
       (0, _objectAssign2.default)(props, {
-        dangerouslySetInnerHTML: { __html: this.state.text }
+        dangerouslySetInnerHTML: { __html: this.text }
       });
-
-      if (this.medium) {
-        this.medium.saveSelection();
-      }
 
       return _react2.default.createElement(tag, props);
     }
