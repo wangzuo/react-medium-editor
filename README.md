@@ -1,16 +1,20 @@
 # react-medium-editor
+
 React wrapper for [medium-editor](https://github.com/daviferreira/medium-editor)
 
-For better rich text editing with react, check [draft-js](http://draftjs.org/).
-
 ### Demo
+
 [http://wangzuo.github.io/react-medium-editor](http://wangzuo.github.io/react-medium-editor)
+
 ### Installation
-``` sh
+
+```sh
 npm install react-medium-editor --save
 ```
+
 ### Usage
-``` javascript
+
+```javascript
 // load theme styles with webpack
 require('medium-editor/dist/css/medium-editor.css');
 require('medium-editor/dist/css/themes/default.css');
@@ -38,21 +42,20 @@ var App = React.createClass({
           tag="pre"
           text={this.state.text}
           onChange={this.handleChange}
-          options={{toolbar: {buttons: ['bold', 'italic', 'underline']}}}
+          options={{ toolbar: { buttons: ['bold', 'italic', 'underline'] } }}
         />
         <h3>Editor #2</h3>
-        <Editor
-          text={this.state.text}
-          onChange={this.handleChange}
-        />
+        <Editor text={this.state.text} onChange={this.handleChange} />
       </div>
     );
   },
 
   handleChange(text, medium) {
-    this.setState({text: text});
+    this.setState({ text: text });
   }
 });
 ```
+
 ### License
+
 MIT

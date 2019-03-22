@@ -1,5 +1,3 @@
-import assign from 'object-assign';
-import blacklist from 'blacklist';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -24,7 +22,7 @@ export default class ReactMediumEditor extends React.Component {
     const dom = ReactDOM.findDOMNode(this);
 
     this.medium = new MediumEditor(dom, this.props.options);
-    this.medium.subscribe('editableInput', (e) => {
+    this.medium.subscribe('editableInput', e => {
       this._updated = true;
       this.change(dom.innerHTML);
     });
@@ -47,12 +45,15 @@ export default class ReactMediumEditor extends React.Component {
   }
 
   render() {
-    const tag = this.props.tag;
-    const props = blacklist(this.props, 'options', 'text', 'tag', 'contentEditable', 'dangerouslySetInnerHTML');
-
-    assign(props, {
-      dangerouslySetInnerHTML: { __html: this.state.text }
-    });
+    const {
+      options,
+      text,
+      tag,
+      contentEditable,
+      dangerouslySetInnerHTML,
+      ...props
+    } = this.props;
+    props.dangerouslySetInnerHTML = { __html: this.state.text };
 
     if (this.medium) {
       this.medium.saveSelection();
