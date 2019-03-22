@@ -31,7 +31,7 @@
     "react-dom": "^16.8.4"
   },
   "dependencies": {
-    "medium-editor": "^5.10.0"
+    "medium-editor": "^5.23.3"
   },
   "devDependencies": {
     "babel-jest": "^24.5.0",
