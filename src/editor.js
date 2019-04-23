@@ -19,12 +19,12 @@ export default class ReactMediumEditor extends React.Component {
   }
 
   componentDidMount() {
-    const dom = ReactDOM.findDOMNode(this);
+    this.dom = ReactDOM.findDOMNode(this);
 
-    this.medium = new MediumEditor(dom, this.props.options);
+    this.medium = new MediumEditor(this.dom, this.props.options);
     this.medium.subscribe('editableInput', e => {
       this._updated = true;
-      this.change(dom.innerHTML);
+      this.change(this.dom.innerHTML);
     });
   }
 
@@ -34,6 +34,10 @@ export default class ReactMediumEditor extends React.Component {
 
   componentWillUnmount() {
     this.medium.destroy();
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.text !== this.dom.innerHTML;
   }
 
   componentWillReceiveProps(nextProps) {
