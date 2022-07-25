@@ -29,13 +29,13 @@
   },
   "homepage": "https://github.com/wangzuo/react-medium-editor",
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
   },
   "dependencies": {
     "blacklist": "^1.1.2",
-    "medium-editor": "^5.10.0",
-    "object-assign": "^4.0.1"
+    "medium-editor": "^5.23.3",
+    "object-assign": "^4.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
